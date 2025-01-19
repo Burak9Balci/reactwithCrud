@@ -1,0 +1,12 @@
+{
+    "products":[
+        {"id":1,"productName":"Mercedes-Benz","price":200,"categoryId":1},
+        {"id":2,"productName":"Bmw","price":150,"categoryId":1},
+        {"id":3,"productName":"Togg","price":100,"categoryId":2},
+        {"id":4,"productName":"Fiat","price":100,"categoryId":2}
+    ],
+    "categories":[
+        {"id":1,"categoryName":"Fast Cars","description":"Rides Fast"},
+        {"id":2,"categoryName":"Slow Cars","description":"Rides Slow"}
+    ]
+}
