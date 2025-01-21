@@ -1,4 +1,4 @@
-import {products} from "db.json"
+
 const CategoryList = () => {
     
   return (

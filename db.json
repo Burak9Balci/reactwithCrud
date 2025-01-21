@@ -8,6 +8,5 @@
     "categories":[
         {"id":1,"categoryName":"Fast Cars","description":"Rides Fast"},
         {"id":2,"categoryName":"Slow Cars","description":"Rides Slow"}
-        
     ]
 }
