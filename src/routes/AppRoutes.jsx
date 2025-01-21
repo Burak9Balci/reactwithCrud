@@ -9,12 +9,12 @@ import ProductUpdate from "../components/product/Update";
 const AppRoutes = () => {
   return (
     <Routes>
-      <Route path="/categories/add" element={<CategoryAdd />} />
-      <Route path="/products/add" element={<ProductAdd />} />
+      <Route path="/categories/Add" element={<CategoryAdd />} />
+      <Route path="/products/Add" element={<ProductAdd />} />
       <Route path="/categories" element={<CategoryList />} />
       <Route path="/products" element={<ProductList />} />
-      <Route path="/categories/update" element={<CategoryUpdate />} />
-      <Route path="/products/update" element={<ProductUpdate />} />
+      <Route path="/categories/Update" element={<CategoryUpdate />} />
+      <Route path="/products/Update" element={<ProductUpdate />} />
     </Routes>
   );
 };

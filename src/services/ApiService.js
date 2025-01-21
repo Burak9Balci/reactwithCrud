@@ -24,7 +24,7 @@ class ApiService {
   }
   async makePut(model = "", obj) {
     try {
-      const response = await axios.post(`${this.url}/${model}`, obj);
+      const response = await axios.put(`${this.url}/${model}`, obj);
       return response.data;
     } catch (error) {
       console.error("POST isteği sırasında hata oluştu:", error);
@@ -33,7 +33,7 @@ class ApiService {
   }
   async makeDelete(model = "", id) {
     try {
-      await axios.delete(`${this.baseURL}/${endpoint}`);
+      await axios.delete(`${this.url}/${model}/${id}`);
     } catch (error) {
       console.error("DELETE isteği sırasında hata oluştu:", error);
     }
