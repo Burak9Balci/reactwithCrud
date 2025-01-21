@@ -1,4 +1,28 @@
+import axios from "axios";
+import { useState, useEffect } from "react";
+import { Form, Button } from "react-bootstrap";
+
+cl;
+
 const ProductAdd = () => {
+  const [productName, setProductName] = useState("");
+  const [price, setPrice] = useState("");
+  const [category, setCategory] = useState("");
+  const [categories, setCategories] = useState([]);
+  useEffect(() => {
+    const fetchCategories = async () => {
+      try {
+        const response = await axios.get("http://localhost:3000/categories");
+        setCategories(response.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchCategories();
+  }, []);
+  const handleSubmit = (e) => {
+    e.preventDefult();
+  };
   return (
     <div>
       <Form.Group controlId="formProductName" className="mb-3">
