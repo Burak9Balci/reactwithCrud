@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { Form, Button } from "react-bootstrap";
 import ApiService from "../../services/ApiService";
-const api = new ApiService("http://localhost:3000");
+import Product from "../../Models/Product";
+const api = new ApiService("http://localhost:3000/products");
 
 const ProductAdd = () => {
   const [productName, setProductName] = useState("");
@@ -11,7 +12,7 @@ const ProductAdd = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = api.getAll();
+        const response = await api.getAll();
         setCategories(response.data);
       } catch (error) {
         console.log(error);
@@ -21,6 +22,7 @@ const ProductAdd = () => {
   }, []);
   const handleSubmit = (e) => {
     e.preventDefault();
+    const newProduct = new Product(null, productName, price, category);
   };
   return (
     <Form onSubmit={handleSubmit}>
@@ -30,7 +32,7 @@ const ProductAdd = () => {
           type="text"
           placeholder="Ürün ismini girin"
           value={productName}
-          onChange={(e) => e.target.value}
+          onChange={(e) => setProductName(e.target.value)}
         />
       </Form.Group>
 

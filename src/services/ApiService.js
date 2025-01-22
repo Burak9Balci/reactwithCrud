@@ -5,10 +5,10 @@ class ApiService {
     this.url = url;
   }
 
-  async getAll(model = "") {
+  async getAll() {
     try {
-      const response = await axios.get(`${this.url}/${model}`);
-      return response.data;
+      const response = await axios.get(`${this.url}`);
+      return response;
     } catch (error) {
       console.log(error);
     }
