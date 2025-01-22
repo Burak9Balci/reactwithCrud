@@ -43,7 +43,10 @@ const ProductAdd = () => {
     }
   };
   return (
-    <Form onSubmit={handleSubmit}>
+    <Form
+      className="d-flex justify-content-center align-items-center flex-column"
+      onSubmit={handleSubmit}
+    >
       <Form.Group controlId="formProductName" className="mb-3">
         <Form.Label>Ürün ismi</Form.Label>
         <Form.Control

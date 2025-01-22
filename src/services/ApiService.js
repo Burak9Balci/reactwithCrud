@@ -22,9 +22,9 @@ class ApiService {
       console.log(error);
     }
   }
-  async makePut(model, obj) {
+  async makePut(model, id, obj) {
     try {
-      const response = await axios.put(`${this.url}/${model}`, obj);
+      const response = await axios.put(`${this.url}/${model}/${id}`, obj);
       return response.data;
     } catch (error) {
       console.error("POST isteği sırasında hata oluştu:", error);

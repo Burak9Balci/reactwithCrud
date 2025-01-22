@@ -2,8 +2,9 @@ import { useState } from "react";
 import { Form, Button, Alert } from "react-bootstrap";
 import ApiService from "../../services/ApiService";
 import Category from "../../Models/Category";
+const api = new ApiService("http://localhost:3000");
+
 const CategoryAdd = () => {
-  const api = new ApiService("http://localhost:3000");
   const [categoryName, setCategoryName] = useState("");
   const [description, setDescription] = useState("");
 
