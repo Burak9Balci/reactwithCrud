@@ -2,27 +2,45 @@ import { useState, useEffect } from "react";
 import { Form, Button } from "react-bootstrap";
 import ApiService from "../../services/ApiService";
 import Product from "../../Models/Product";
-const api = new ApiService("http://localhost:3000/products");
-
+const api = new ApiService("http://localhost:3000");
 const ProductAdd = () => {
   const [productName, setProductName] = useState("");
   const [price, setPrice] = useState("");
-  const [category, setCategory] = useState("");
+  const [categoryId, setCategoryId] = useState(0);
   const [categories, setCategories] = useState([]);
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await api.getAll();
-        setCategories(response.data);
+        const categories = await api.getAll("categories");
+        setCategories(categories);
       } catch (error) {
-        console.log(error);
+        console.log(`ürünler getirilemedi`);
       }
     };
     fetchCategories();
   }, []);
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const newProduct = new Product(null, productName, price, category);
+
+    if (!productName || !price || !categoryId) {
+      alert("Lütfen tüm alanları doldursana evladımmmm.");
+      return;
+    }
+
+    if (isNaN(price)) {
+      alert("Ücreti sayı olarak gir");
+      return;
+    }
+    const newProduct = new Product(productName, price, categoryId);
+    try {
+      await api.makePost("products", newProduct);
+      alert("Ürün Eklendi");
+      setProductName("");
+      setPrice("");
+      setCategoryId("");
+    } catch (error) {
+      console.log(`Ürün eklenirken bir hata oldu ${error}`);
+    }
   };
   return (
     <Form onSubmit={handleSubmit}>
@@ -49,13 +67,13 @@ const ProductAdd = () => {
       <Form.Group controlId="formCategory" className="mb-3">
         <Form.Label>Kategori</Form.Label>
         <Form.Select
-          value={category}
-          onChange={(e) => setCategory(e.target.value)}
+          value={categoryId}
+          onChange={(e) => setCategoryId(e.target.value)}
         >
           <option value="">Kategori seçin</option>
           {categories.map((cat) => (
-            <option key={cat.id} value={cat.name}>
-              {cat.name}
+            <option key={cat.id} value={cat.id}>
+              {cat.categoryName}
             </option>
           ))}
         </Form.Select>

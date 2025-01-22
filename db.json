@@ -1,12 +1,106 @@
 {
-    "products":[
-        {"id":1,"productName":"Mercedes-Benz","price":200,"categoryId":1},
-        {"id":2,"productName":"Bmw","price":150,"categoryId":1},
-        {"id":3,"productName":"Togg","price":100,"categoryId":2},
-        {"id":4,"productName":"Fiat","price":100,"categoryId":2}
-    ],
-    "categories":[
-        {"id":1,"categoryName":"Fast Cars","description":"Rides Fast"},
-        {"id":2,"categoryName":"Slow Cars","description":"Rides Slow"}
-    ]
+  "products": [
+    {
+      "id": "1",
+      "productName": "Mercedes-Benz",
+      "price": 200,
+      "categoryId": 1
+    },
+    {
+      "id": "2",
+      "productName": "Bmw",
+      "price": 150,
+      "categoryId": 1
+    },
+    {
+      "id": "3",
+      "productName": "Togg",
+      "price": 100,
+      "categoryId": 2
+    },
+    {
+      "id": "4",
+      "productName": "Fiat",
+      "price": 100,
+      "categoryId": 2
+    },
+    {
+      "id": null,
+      "productName": "aaa",
+      "price": "22",
+      "categoryId": "1"
+    },
+    {
+      "id": "eed9",
+      "productName": "aaaa",
+      "price": "22222",
+      "categoryId": "1"
+    },
+    {
+      "id": "10e9",
+      "productName": "dasdas",
+      "price": "222",
+      "categoryId": "1"
+    },
+    {
+      "id": "2d82",
+      "productName": "aaa",
+      "price": "222",
+      "categoryId": "2"
+    },
+    {
+      "id": "08e0",
+      "productName": "sss",
+      "price": "222",
+      "categoryId": "1"
+    },
+    {
+      "id": "a67f",
+      "productName": "aaaaaaaaaaaaaaaaa",
+      "price": "222222222222222222222",
+      "categoryId": "1"
+    },
+    {
+      "id": "22fe",
+      "productName": "aaaaaaaaaaaaaa",
+      "price": "22222222222222222222222222222222222222222222222",
+      "categoryId": "1"
+    },
+    {
+      "id": "4cc0",
+      "productName": "aaaaaaaaaaaaaa",
+      "price": "22222222222222222222222222222222222222222222222",
+      "categoryId": "1"
+    },
+    {
+      "id": "a004",
+      "productName": "aaa",
+      "price": "111",
+      "categoryId": "2"
+    },
+    {
+      "id": "64ca",
+      "productName": "aaa",
+      "price": "11",
+      "categoryId": "1"
+    },
+    {
+      "id": "9db3",
+      "productName": "aaa",
+      "price": "222",
+      "categoryId": "2"
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "categoryName": "Fast Cars",
+      "description": "Rides Fast"
+    },
+    {
+      "id": "2",
+      "categoryName": "Slow Cars",
+      "description": "Rides Slow"
+    }
+  ]
 }

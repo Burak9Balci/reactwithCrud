@@ -5,16 +5,16 @@ class ApiService {
     this.url = url;
   }
 
-  async getAll() {
+  async getAll(model) {
     try {
-      const response = await axios.get(`${this.url}`);
-      return response;
+      const response = await axios.get(`${this.url}/${model}`);
+      return response.data;
     } catch (error) {
       console.log(error);
     }
   }
 
-  async makePost(model = "", obj) {
+  async makePost(model, obj) {
     try {
       const response = await axios.post(`${this.url}/${model}`, obj);
       return response.data;
@@ -22,7 +22,7 @@ class ApiService {
       console.log(error);
     }
   }
-  async makePut(model = "", obj) {
+  async makePut(model, obj) {
     try {
       const response = await axios.put(`${this.url}/${model}`, obj);
       return response.data;
@@ -31,7 +31,7 @@ class ApiService {
       throw error;
     }
   }
-  async makeDelete(model = "", id) {
+  async makeDelete(model, id) {
     try {
       await axios.delete(`${this.url}/${model}/${id}`);
     } catch (error) {
