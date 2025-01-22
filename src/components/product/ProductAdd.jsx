@@ -14,7 +14,7 @@ const ProductAdd = () => {
         const categories = await api.getAll("categories");
         setCategories(categories);
       } catch (error) {
-        console.log(`ürünler getirilemedi`);
+        alert(`ürünler getirilemedi`);
       }
     };
     fetchCategories();
@@ -39,7 +39,7 @@ const ProductAdd = () => {
       setPrice("");
       setCategoryId("");
     } catch (error) {
-      console.log(`Ürün eklenirken bir hata oldu ${error}`);
+      alert(`Ürün eklenirken bir hata oldu ${error}`);
     }
   };
   return (
