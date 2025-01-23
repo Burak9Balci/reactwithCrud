@@ -29,30 +29,31 @@ const CategoryUpdate = () => {
   };
 
   return (
-    <Form onSubmit={handleSubmit}>
-      <div className="d-flex justify-content-center align-items-center flex-column">
-        <Form.Group controlId="formCategoryName" className="mb-3">
-          <Form.Label>Kategoryi ismi</Form.Label>
-          <Form.Control
-            onChange={(e) => setCategoryName(e.target.value)}
-            type="text"
-            placeholder="Kategori adı girin"
-          />
-        </Form.Group>
+    <Form
+      onSubmit={handleSubmit}
+      className="d-flex justify-content-center align-items-center flex-column"
+    >
+      <Form.Group controlId="formCategoryName" className="mb-3">
+        <Form.Label>Kategoryi ismi</Form.Label>
+        <Form.Control
+          onChange={(e) => setCategoryName(e.target.value)}
+          type="text"
+          placeholder="Kategori adı girin"
+        />
+      </Form.Group>
 
-        <Form.Group controlId="formDescription" className="mb-3">
-          <Form.Label>Açıklama</Form.Label>
-          <Form.Control
-            onChange={(e) => setDescription(e.target.value)}
-            type="text"
-            placeholder="kategori açıklaması girin"
-          />
-        </Form.Group>
+      <Form.Group controlId="formDescription" className="mb-3">
+        <Form.Label>Açıklama</Form.Label>
+        <Form.Control
+          onChange={(e) => setDescription(e.target.value)}
+          type="text"
+          placeholder="kategori açıklaması girin"
+        />
+      </Form.Group>
 
-        <Button variant="primary" type="submit">
-          Gönder
-        </Button>
-      </div>
+      <Button variant="primary" type="submit">
+        Gönder
+      </Button>
     </Form>
   );
 };

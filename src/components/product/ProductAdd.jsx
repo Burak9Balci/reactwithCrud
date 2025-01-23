@@ -6,7 +6,7 @@ const api = new ApiService("http://localhost:3000");
 const ProductAdd = () => {
   const [productName, setProductName] = useState("");
   const [price, setPrice] = useState("");
-  const [categoryId, setCategoryId] = useState(0);
+  const [categoryId, setCategoryId] = useState("");
   const [categories, setCategories] = useState([]);
   useEffect(() => {
     const fetchCategories = async () => {
@@ -31,7 +31,7 @@ const ProductAdd = () => {
       alert("Ücreti sayı olarak gir");
       return;
     }
-    const newProduct = new Product(productName, price, categoryId);
+    const newProduct = new Product(productName, +price, categoryId);
     try {
       await api.makePost("products", newProduct);
       alert("Ürün Eklendi");
