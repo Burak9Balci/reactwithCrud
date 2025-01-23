@@ -22,14 +22,14 @@ const CategoryList = () => {
     fetchCategories();
   }, []);
 
-  const handleDelete = () => {
+  const handleDeleteClick = async () => {
     if (selectedCategoryIds.length === 0) {
       alert("silmek için bir kategory seçin");
       return;
     }
     try {
       for (const id of selectedCategoryIds) {
-        api.makeDelete("categories", id);
+        await api.makeDelete("categories", id);
       }
       alert("Category Sİlindi");
       setCategories((prev) =>
@@ -77,7 +77,7 @@ const CategoryList = () => {
             </Button>
           </th>
           <th>
-            <Button onClick={handleDelete}>Silmek için Tıkla</Button>
+            <Button onClick={handleDeleteClick}>Silmek için Tıkla</Button>
           </th>
           <th>Selector</th>
         </tr>
