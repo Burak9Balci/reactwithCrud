@@ -2,11 +2,13 @@ import { Form, Button } from "react-bootstrap";
 import ApiService from "../../services/ApiService";
 import Category from "../../Models/Category";
 import { useState } from "react";
+import { useParams } from "react-router-dom";
 const api = new ApiService("http://localhost:3000");
 
 const CategoryUpdate = () => {
   const [categoryName, setCategoryName] = useState("");
   const [description, setDescription] = useState("");
+  const { id } = useParams();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -14,9 +16,10 @@ const CategoryUpdate = () => {
       alert("alanları doldurun");
       return;
     }
+
     const newCategory = new Category(categoryName, description);
     try {
-      await api.makePut("categories", "", newCategory);
+      await api.makePut("categories", id, newCategory);
       alert("Category Güncellendi");
       setDescription("");
       setCategoryName("");

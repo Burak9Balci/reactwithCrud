@@ -28,89 +28,79 @@
       "id": null,
       "productName": "aaa",
       "price": "22",
-      "categoryId": "1"
+      "categoryId": null
     },
     {
       "id": "eed9",
       "productName": "aaaa",
       "price": "22222",
-      "categoryId": "1"
+      "categoryId": null
     },
     {
       "id": "10e9",
       "productName": "dasdas",
       "price": "222",
-      "categoryId": "1"
+      "categoryId": null
     },
     {
       "id": "2d82",
       "productName": "aaa",
       "price": "222",
-      "categoryId": "2"
+      "categoryId": null
     },
     {
       "id": "08e0",
       "productName": "sss",
       "price": "222",
-      "categoryId": "1"
+      "categoryId": null
     },
     {
       "id": "a67f",
       "productName": "aaaaaaaaaaaaaaaaa",
       "price": "222222222222222222222",
-      "categoryId": "1"
+      "categoryId": null
     },
     {
       "id": "22fe",
       "productName": "aaaaaaaaaaaaaa",
       "price": "22222222222222222222222222222222222222222222222",
-      "categoryId": "1"
+      "categoryId": null
     },
     {
       "id": "4cc0",
       "productName": "aaaaaaaaaaaaaa",
       "price": "22222222222222222222222222222222222222222222222",
-      "categoryId": "1"
+      "categoryId": null
     },
     {
       "id": "a004",
       "productName": "aaa",
       "price": "111",
-      "categoryId": "2"
+      "categoryId": null
     },
     {
       "id": "64ca",
       "productName": "aaa",
       "price": "11",
-      "categoryId": "1"
+      "categoryId": null
     },
     {
       "id": "9db3",
       "productName": "aaa",
       "price": "222",
-      "categoryId": "2"
+      "categoryId": null
     }
   ],
   "categories": [
     {
-      "id": "1",
-      "categoryName": "Fast Cars",
-      "description": "Rides Fast"
+      "categoryName": "Araba",
+      "description": "hızlı ara",
+      "id": "529f"
     },
     {
-      "id": "2",
-      "categoryName": "Slow Cars",
-      "description": "Rides Slow"
-    },
-    {
-      "id": "5d9f",
-      "categoryName": "sss",
-      "description": "aaa"
-    },
-    {
-      "id": "0767",
-      "categoryName": "sssaa",
-      "description": "aaaaa"
+      "id": "4af9",
+      "categoryName": "aaaaaaaaaa",
+      "description": "aaaaaaaaaaaaa"
     }
   ]
 }
