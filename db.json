@@ -1,28 +1,4 @@
 {
-  "products": [
-    {
-      "productName": "asa",
-      "price": 22222,
-      "categoryId": null,
-      "id": "3"
-    },
-    {
-      "productName": "dasdas",
-      "price": 22,
-      "categoryId": null,
-      "id": "d324"
-    }
-  ],
-  "categories": [
-    {
-      "id": "99c3",
-      "categoryName": "ads",
-      "description": "asd"
-    },
-    {
-      "id": "f429",
-      "categoryName": "dasdas",
-      "description": "asdasd"
-    }
-  ]
+  "products": [],
+  "categories": []
 }
