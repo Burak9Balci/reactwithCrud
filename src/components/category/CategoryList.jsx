@@ -44,10 +44,10 @@ const CategoryList = () => {
   const handleCheckboxChange = (id) => {
     setSelectedCategoryIds((prev) => {
       if (prev.includes(id)) {
-        // Eğer id zaten seçilmişse, onu diziden çıkar
+        // Eğer id zaten seçilmişse
         return prev.filter((categoryId) => categoryId !== id);
       } else {
-        // Eğer id seçili değilse, onu diziye ekle
+        // Eğer id seçili değilse
         return [...prev, id];
       }
     });

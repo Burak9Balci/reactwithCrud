@@ -35,7 +35,7 @@ const ProductList = () => {
   };
   const handleDeleteClick = async () => {
     if (selectedProductIds.length === 0) {
-      alert("silme yapmak için textbox seç");
+      alert("silme yapmak için checkbox seç");
       return;
     }
     try {
