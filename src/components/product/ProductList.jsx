@@ -90,7 +90,6 @@ const ProductList = () => {
               <td>
                 <input
                   type="checkbox"
-                  checked={selectedProductIds.includes(product.id)}
                   onChange={() => handleCheckBoxChange(product.id)}
                 />
               </td>

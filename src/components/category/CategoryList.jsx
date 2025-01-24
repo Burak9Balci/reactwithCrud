@@ -95,7 +95,6 @@ const CategoryList = () => {
               <td>
                 <input
                   type="checkbox"
-                  checked={selectedCategoryIds.includes(category.id)}
                   onChange={() => handleCheckboxChange(category.id)}
                 />
               </td>
