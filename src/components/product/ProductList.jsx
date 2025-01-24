@@ -29,11 +29,19 @@ const ProductList = () => {
     });
   };
   const handleUpdateClick = () => {
+    if (products.length === 0) {
+      alert("Product yaratmadan bu işelemi yapamazsın");
+      return;
+    }
     selectedProductIds.length === 1
       ? navigate(`/products/Update/${selectedProductIds}`)
       : alert("lütfen sadece 1 product seçiniz");
   };
   const handleDeleteClick = async () => {
+    if (products.length === 0) {
+      alert("Product yaratmadan bu işelemi yapamazsın");
+      return;
+    }
     if (selectedProductIds.length === 0) {
       alert("silme yapmak için checkbox seç");
       return;

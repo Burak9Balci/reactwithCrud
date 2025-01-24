@@ -23,6 +23,10 @@ const CategoryList = () => {
   }, []);
 
   const handleDeleteClick = async () => {
+    if (categories.length === 0) {
+      alert("category yaratmadan bu işelemi yapamazsın");
+      return;
+    }
     if (selectedCategoryIds.length === 0) {
       alert("silmek için bir kategory seçin");
       return;
@@ -54,6 +58,10 @@ const CategoryList = () => {
   };
 
   const handleUpdateClick = () => {
+    if (categories.length === 0) {
+      alert("category yaratmadan bu işelemi yapamazsın");
+      return;
+    }
     selectedCategoryIds.length === 1
       ? navigate(`/categories/Update/${selectedCategoryIds}`)
       : alert("lütfen sadece 1 category seçiniz");
