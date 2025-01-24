@@ -1,22 +1,24 @@
 import { useState, useEffect } from "react";
 import ApiService from "../../services/ApiService";
 import { Table, Button, Form } from "react-bootstrap";
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 const api = new ApiService("http://localhost:3000");
 const ProductList = () => {
+  const navigate = useNavigate();
   const [products, setProducts] = useState([]);
   const [selectedProductIds, setSelectedProductIds] = useState([]);
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const products = api.getAll("products");
-        setProducts(products);
+        const data = await api.getAll("products");
+        setProducts(data);
       } catch (error) {
         alert("Ürünler gelirken hata oldu api de hata olabilir");
       }
     };
     fetchProducts();
   }, []);
+
   const handleCheckBoxChange = (id) => {
     setSelectedProductIds((prev) => {
       if (prev.includes(id)) {
@@ -26,7 +28,11 @@ const ProductList = () => {
       }
     });
   };
-
+  const handleUpdateClick = () => {
+    selectedProductIds.length === 1
+      ? navigate(`/products/Update/${selectedProductIds}`)
+      : alert("lütfen sadece 1 product seçiniz");
+  };
   const handleDeleteClick = async () => {
     if (selectedProductIds.length === 0) {
       alert("silme yapmak için textbox seç");
@@ -37,11 +43,11 @@ const ProductList = () => {
         await api.makeDelete("products", id);
       }
       alert("Silinme tamamlandı");
-      setProducts((prevProducts) => {
+      setProducts((prevProducts) =>
         prevProducts.filter(
           (product) => !selectedProductIds.includes(product.id)
-        );
-      });
+        )
+      );
       setSelectedProductIds([]);
     } catch (error) {
       alert("silme işlemi gerçekleşemedi");
@@ -57,12 +63,12 @@ const ProductList = () => {
           <th>Price</th>
           <th>CategoryID</th>
           <th>
-            <Button onClick={() => Navigate("/products/Add")}>
+            <Button onClick={() => navigate("/products/Add")}>
               Ekleme Yap
             </Button>
           </th>
           <th>
-            <Button onClick={ss}>Güncelle</Button>
+            <Button onClick={handleUpdateClick}>Güncelle</Button>
           </th>
           <th>
             <Button onClick={handleDeleteClick}>Sil</Button>
@@ -76,8 +82,8 @@ const ProductList = () => {
             <tr key={product.id}>
               <td>{product.id}</td>
               <td>{product.productName}</td>
-              <td>{product.description}</td>
-              <td>{product.categorId}</td>
+              <td>{product.price}</td>
+              <td>{product.categoryId}</td>
               <td></td>
               <td></td>
               <td></td>
@@ -85,7 +91,7 @@ const ProductList = () => {
                 <input
                   type="checkbox"
                   checked={selectedProductIds.includes(product.id)}
-                  onClick={handleCheckBoxChange}
+                  onChange={() => handleCheckBoxChange(product.id)}
                 />
               </td>
             </tr>

@@ -1,10 +1,11 @@
 import { Form, Button } from "react-bootstrap";
 import ApiService from "../../services/ApiService";
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import Product from "../../Models/Product";
-
+const api = new ApiService("http://localhost:3000");
 const ProductForm = () => {
+  const navigate = useNavigate();
   const [categories, setCategories] = useState([]);
   const [productName, setProductName] = useState("");
   const [price, setPrice] = useState("");
@@ -12,8 +13,8 @@ const ProductForm = () => {
   const { id } = useParams();
   useEffect(() => {
     const fetchCategories = async () => {
-      const categories = await ApiService.getAll("categories");
-      setCategories(categories);
+      const data = await api.getAll("categories");
+      setCategories(data);
     };
     fetchCategories();
   }, []);
@@ -29,11 +30,12 @@ const ProductForm = () => {
     }
     const newProduct = new Product(productName, +price, categoryId);
     try {
-      await ApiService.makePut("products", id, newProduct);
+      await api.makePut("products", id, newProduct);
       alert("Güncelleme yapıldı");
       setProductName("");
       setPrice("");
       setCategoryId("");
+      navigate("/products");
     } catch (error) {
       alert("güncelleme sırasında hata yaşandı id de hata olabilir");
     }
@@ -73,7 +75,7 @@ const ProductForm = () => {
           {categories.map((category) => {
             return (
               <option key={category.id} value={category.id}>
-                {category.name}
+                {category.categoryName}
               </option>
             );
           })}

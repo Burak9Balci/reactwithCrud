@@ -1,112 +1,27 @@
 {
   "products": [
     {
-      "id": "1",
-      "productName": "Mercedes-Benz",
-      "price": 200,
-      "categoryId": 1
-    },
-    {
-      "id": "2",
-      "productName": "Bmw",
-      "price": 150,
-      "categoryId": 1
-    },
-    {
-      "id": "3",
-      "productName": "Togg",
-      "price": 100,
-      "categoryId": 2
-    },
-    {
-      "id": "4",
-      "productName": "Fiat",
-      "price": 100,
-      "categoryId": 2
-    },
-    {
-      "id": null,
-      "productName": "aaa",
-      "price": "22",
-      "categoryId": null
-    },
-    {
-      "id": "eed9",
-      "productName": "aaaa",
-      "price": "22222",
-      "categoryId": null
-    },
-    {
-      "id": "10e9",
-      "productName": "dasdas",
-      "price": "222",
-      "categoryId": null
-    },
-    {
-      "id": "2d82",
-      "productName": "aaa",
-      "price": "222",
-      "categoryId": null
-    },
-    {
-      "id": "08e0",
-      "productName": "sss",
-      "price": "222",
-      "categoryId": null
-    },
-    {
-      "id": "a67f",
-      "productName": "aaaaaaaaaaaaaaaaa",
-      "price": "222222222222222222222",
-      "categoryId": null
-    },
-    {
-      "id": "22fe",
-      "productName": "aaaaaaaaaaaaaa",
-      "price": "22222222222222222222222222222222222222222222222",
-      "categoryId": null
-    },
-    {
-      "id": "4cc0",
-      "productName": "aaaaaaaaaaaaaa",
-      "price": "22222222222222222222222222222222222222222222222",
-      "categoryId": null
-    },
-    {
-      "id": "a004",
-      "productName": "aaa",
-      "price": "111",
-      "categoryId": null
-    },
-    {
-      "id": "64ca",
-      "productName": "aaa",
-      "price": "11",
-      "categoryId": null
-    },
-    {
-      "id": "9db3",
-      "productName": "aaa",
-      "price": "222",
-      "categoryId": null
-    },
-    {
-      "id": "8b3a",
-      "productName": "At",
-      "price": 2222,
-      "categoryId": "529f"
+      "productName": "asa",
+      "price": 22222,
+      "categoryId": "4af9",
+      "id": "3"
     }
   ],
   "categories": [
     {
-      "categoryName": "Araba",
-      "description": "hızlı ara",
-      "id": "529f"
-    },
-    {
       "id": "4af9",
       "categoryName": "aaaaaaaaaa",
       "description": "aaaaaaaaaaaaa"
+    },
+    {
+      "categoryName": "sdas",
+      "description": "dasdsa",
+      "id": "3d55"
+    },
+    {
+      "id": "f6de",
+      "categoryName": "sadas",
+      "description": "dasdas"
     }
   ]
 }

@@ -2,10 +2,11 @@ import { Form, Button } from "react-bootstrap";
 import ApiService from "../../services/ApiService";
 import Category from "../../Models/Category";
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 const api = new ApiService("http://localhost:3000");
 
 const CategoryUpdate = () => {
+  const navigate = useNavigate();
   const [categoryName, setCategoryName] = useState("");
   const [description, setDescription] = useState("");
   const { id } = useParams();
@@ -23,6 +24,7 @@ const CategoryUpdate = () => {
       alert("Category Güncellendi");
       setDescription("");
       setCategoryName("");
+      navigate("/categories");
     } catch (error) {
       alert("Category güncellenirken hata olustu");
     }

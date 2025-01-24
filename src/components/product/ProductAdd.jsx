@@ -2,8 +2,10 @@ import { useState, useEffect } from "react";
 import { Form, Button } from "react-bootstrap";
 import ApiService from "../../services/ApiService";
 import Product from "../../Models/Product";
+import { useNavigate } from "react-router-dom";
 const api = new ApiService("http://localhost:3000");
 const ProductAdd = () => {
+  const navigate = useNavigate();
   const [productName, setProductName] = useState("");
   const [price, setPrice] = useState("");
   const [categoryId, setCategoryId] = useState("");
@@ -38,6 +40,7 @@ const ProductAdd = () => {
       setProductName("");
       setPrice("");
       setCategoryId("");
+      navigate("/products");
     } catch (error) {
       alert(`Ürün eklenirken bir hata oldu ${error}`);
     }
